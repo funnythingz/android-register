@@ -32,12 +32,17 @@ public class ProductCoinListAdapter extends ArrayAdapter<AppCoin> {
 
         AppCoin appCoin = getItem(position);
 
-        TextView productCoinValueTextView = (TextView) convertView.findViewById(R.id.product_coin_value_text_view);
-        productCoinValueTextView.setText(appCoin.getValue());
+        ViewHolder.text = (TextView) convertView.findViewById(R.id.product_coin_value_text_view);
+        ViewHolder.button = (Button) convertView.findViewById(R.id.buy_coin_button);
 
-        Button buyCoinButton = (Button) convertView.findViewById(R.id.buy_coin_button);
-        buyCoinButton.setText(appCoin.getPrice().getPriceValue());
+        ViewHolder.text.setText(appCoin.getValue());
+        ViewHolder.button.setText(appCoin.getPrice().getPriceValue());
 
         return convertView;
+    }
+
+    private static class ViewHolder {
+        public static TextView text;
+        public static Button button;
     }
 }
