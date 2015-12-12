@@ -6,6 +6,6 @@
     android:fitsSystemWindows="true"
     tools:context="com.funnythingz.register.MainActivity">
 
-    <include layout="@layout/content_main" />
+    <include layout="@layout/coin_main" />
 
 </android.support.design.widget.CoordinatorLayout>
