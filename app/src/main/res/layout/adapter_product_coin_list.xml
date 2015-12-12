@@ -7,24 +7,47 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:gravity="center_vertical"
         android:padding="20dp"
         >
-        <TextView
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginRight="2dp"
-            android:textSize="24dp"
-            android:id="@+id/product_coin_value_text_view"
-            android:textColor="#334455"
-            tools:text="100"
-            />
-        <TextView
+            android:layout_weight="1"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="2dp"
+                android:textSize="24dp"
+                android:id="@+id/product_coin_value_text_view"
+                android:textColor="#334455"
+                tools:text="100"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="14dp"
+                android:textColor="#334455"
+                android:text="コイン"
+                />
+        </LinearLayout>
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="14dp"
-            android:textColor="#334455"
-            android:text="コイン"
-            />
+            android:gravity="right"
+            android:layout_weight="1"
+            >
+            <Button
+                android:id="@+id/buy_coin_button"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:textSize="18dp"
+                android:paddingTop="15dp"
+                android:paddingBottom="15dp"
+                tools:text="￥120"
+                />
+        </LinearLayout>
     </LinearLayout>
 
 </RelativeLayout>
