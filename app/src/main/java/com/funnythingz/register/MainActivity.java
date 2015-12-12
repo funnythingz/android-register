@@ -21,6 +21,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         TextView myCoinValueTextView = (TextView) findViewById(R.id.my_coin_value_text_view);
+
+        // TODO: エンティティのもってる保有コインを取得
         myCoinValueTextView.setText("0");
 
         ArrayList<AppCoin> appCoinList = ProductCoinListFactory.createProductCoinList();
