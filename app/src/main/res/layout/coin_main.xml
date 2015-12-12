@@ -54,7 +54,7 @@
         android:layout_below="@+id/my_coin_layout"
         android:layout_alignParentStart="true"
         android:layout_alignParentBottom="true"
-        android:background="#f1f2f3"
+        android:background="#f7f8f9"
         >
         <ListView
             android:id="@+id/product_coin_list_view"

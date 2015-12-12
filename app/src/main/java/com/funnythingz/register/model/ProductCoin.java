@@ -6,11 +6,15 @@ public class ProductCoin {
 
     private int mValue;
 
-    ProductCoin(int value) {
+    public ProductCoin(int value) {
         mValue = value;
     }
 
-    public int getValue() {
+    public String getValue() {
+        return Integer.toString(mValue);
+    }
+
+    public int getCoin() {
         return mValue;
     }
 }

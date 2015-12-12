@@ -1,11 +1,11 @@
 package com.funnythingz.register.adapter;
 
-import android.app.Activity;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.TextView;
 
 import com.funnythingz.register.R;
 import com.funnythingz.register.model.ProductCoin;
@@ -16,21 +16,23 @@ import java.util.ArrayList;
  */
 public class ProductCoinListAdapter extends ArrayAdapter<ProductCoin> {
 
+    LayoutInflater mLayoutInflater;
+
     public ProductCoinListAdapter(Context context, int resource, ArrayList<ProductCoin> productCoinList) {
         super(context, resource, productCoinList);
+        mLayoutInflater = LayoutInflater.from(context);
     }
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        View view = convertView;
-
-        if (view == null) {
-            LayoutInflater layoutInflater = ((Activity) getContext()).getLayoutInflater();
-            view = layoutInflater.inflate(R.layout.adapter_product_coin_list, parent, false);
-            ProductCoin productCoin = getItem(position);
-            // TODO: viewにProductCoinをbindする
+        if (convertView == null) {
+            convertView = mLayoutInflater.inflate(R.layout.adapter_product_coin_list, parent, false);
         }
 
-        return view;
+        ProductCoin productCoin = getItem(position);
+        TextView productCoinValueTextView = (TextView) convertView.findViewById(R.id.product_coin_value_text_view);
+        productCoinValueTextView.setText(productCoin.getValue());
+
+        return convertView;
     }
 }
