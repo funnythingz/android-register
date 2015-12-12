@@ -29,4 +29,7 @@ dependencies {
 
     // Google Play Services
     compile 'com.google.android.gms:play-services-base:8.3.0'
+
+    // Gson
+    compile 'com.google.code.gson:gson:2.5'
 }
