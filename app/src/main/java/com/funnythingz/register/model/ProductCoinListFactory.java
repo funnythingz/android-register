@@ -5,16 +5,16 @@ import java.util.ArrayList;
 /**
  */
 public class ProductCoinListFactory {
-    public static ArrayList<ProductCoin> createProductCoinList() {
+    public static ArrayList<AppCoin> createProductCoinList() {
 
-        ArrayList<ProductCoin> productCoinList = new ArrayList<ProductCoin>();
+        ArrayList<AppCoin> appCoinList = new ArrayList<AppCoin>();
 
-        productCoinList.add(new ProductCoin(100, 120));
-        productCoinList.add(new ProductCoin(200, 240));
-        productCoinList.add(new ProductCoin(500, 480));
-        productCoinList.add(new ProductCoin(800, 720));
-        productCoinList.add(new ProductCoin(1600, 1200));
+        appCoinList.add(new AppCoin(100, 120));
+        appCoinList.add(new AppCoin(200, 240));
+        appCoinList.add(new AppCoin(500, 480));
+        appCoinList.add(new AppCoin(800, 720));
+        appCoinList.add(new AppCoin(1600, 1200));
 
-        return productCoinList;
+        return appCoinList;
     }
 }

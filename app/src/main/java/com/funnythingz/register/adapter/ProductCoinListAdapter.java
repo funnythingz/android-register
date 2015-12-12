@@ -9,18 +9,18 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.funnythingz.register.R;
-import com.funnythingz.register.model.ProductCoin;
+import com.funnythingz.register.model.AppCoin;
 
 import java.util.ArrayList;
 
 /**
  */
-public class ProductCoinListAdapter extends ArrayAdapter<ProductCoin> {
+public class ProductCoinListAdapter extends ArrayAdapter<AppCoin> {
 
     LayoutInflater mLayoutInflater;
 
-    public ProductCoinListAdapter(Context context, int resource, ArrayList<ProductCoin> productCoinList) {
-        super(context, resource, productCoinList);
+    public ProductCoinListAdapter(Context context, int resource, ArrayList<AppCoin> appCoinList) {
+        super(context, resource, appCoinList);
         mLayoutInflater = LayoutInflater.from(context);
     }
 
@@ -30,13 +30,13 @@ public class ProductCoinListAdapter extends ArrayAdapter<ProductCoin> {
             convertView = mLayoutInflater.inflate(R.layout.adapter_product_coin_list, parent, false);
         }
 
-        ProductCoin productCoin = getItem(position);
+        AppCoin appCoin = getItem(position);
 
         TextView productCoinValueTextView = (TextView) convertView.findViewById(R.id.product_coin_value_text_view);
-        productCoinValueTextView.setText(productCoin.getValue());
+        productCoinValueTextView.setText(appCoin.getValue());
 
         Button buyCoinButton = (Button) convertView.findViewById(R.id.buy_coin_button);
-        buyCoinButton.setText(productCoin.getPrice().getPriceValue());
+        buyCoinButton.setText(appCoin.getPrice().getPriceValue());
 
         return convertView;
     }

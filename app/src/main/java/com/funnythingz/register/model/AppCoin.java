@@ -2,12 +2,12 @@ package com.funnythingz.register.model;
 
 /**
  */
-public class ProductCoin {
+public class AppCoin {
 
     private int mCoin;
     private Price mPrice;
 
-    public ProductCoin(int coin, int price) {
+    public AppCoin(int coin, int price) {
         mCoin = coin;
         mPrice = new Price(price, CurrencyUnit.YEN);
     }
