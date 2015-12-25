@@ -12,18 +12,13 @@ class AppCoinFactory(internal val mResponseList: ArrayList<String>) {
     @Throws(JSONException::class)
     fun createProductCoinList(): ArrayList<AppCoin> {
 
-        val appCoinList = ArrayList<AppCoin>()
-
-        for (response in mResponseList) {
-            val jsonObject = JSONObject(response)
+       return mResponseList.map {
+            val jsonObject = JSONObject(it)
             val gson = Gson()
             val inAppBillingProduct: InAppBillingProduct = gson.fromJson(jsonObject.toString(), InAppBillingProduct::class.java)
-            appCoinList.add(
-                    AppCoin(ProductId(inAppBillingProduct.productId),
-                            inAppBillingProduct.title,
-                            inAppBillingProduct.price))
-        }
-
-        return appCoinList
+            AppCoin(ProductId(inAppBillingProduct.productId),
+                    inAppBillingProduct.title,
+                    inAppBillingProduct.price)
+        } as ArrayList<AppCoin>
     }
 }

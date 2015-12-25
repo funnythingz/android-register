@@ -27,12 +27,8 @@ class ProductCoinListAdapter(private val mMainActivity: Activity,
                              resource: Int,
                              appCoinList: ArrayList<AppCoin>) : ArrayAdapter<AppCoin>(mMainActivity, resource, appCoinList) {
 
-    internal var mLayoutInflater: LayoutInflater
+    private var mLayoutInflater: LayoutInflater = LayoutInflater.from(mMainActivity)
     private val mHandler = Handler()
-
-    init {
-        mLayoutInflater = LayoutInflater.from(mMainActivity)
-    }
 
     override fun getView(position: Int, convertView: View?, parent: ViewGroup): View {
         val appCoin = getItem(position)
