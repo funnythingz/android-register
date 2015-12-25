@@ -1,8 +1,8 @@
-package com.funnythingz.register.model;
+package com.funnythingz.register.model
 
 /**
  */
-public enum BillingResponseResult {
+enum class BillingResponseResult internal constructor(private val id: Int) {
     // 成功
     OK(0),
 
@@ -27,13 +27,7 @@ public enum BillingResponseResult {
     // 所有していない商品に対して消費行動を行おうとして失敗
     ITEM_NOT_OWNED(8);
 
-    private final int id;
-
-    BillingResponseResult(int id) {
-        this.id = id;
-    }
-
-    public boolean equals(int code) {
-        return this.id == code;
+    fun equals(code: Int): Boolean {
+        return this.id == code
     }
 }

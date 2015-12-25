@@ -1,4 +1,5 @@
 apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
 
 android {
     compileSdkVersion 23
@@ -11,11 +12,16 @@ android {
         versionCode 1
         versionName "0.1"
     }
+
     buildTypes {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
+    }
+
+    sourceSets {
+        main.kotlin.srcDirs += 'src/main/kotrin'
     }
 }
 
@@ -39,4 +45,7 @@ dependencies {
 
     // Retrofit
     compile 'com.squareup.retrofit:retrofit:2.0.0-beta2'
+
+    // kotlin
+    compile 'org.jetbrains.kotlin:kotlin-stdlib:1.0.0-beta-4584'
 }
