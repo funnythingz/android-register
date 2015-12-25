@@ -3,9 +3,9 @@ package com.funnythingz.register.adapter
 import android.app.Activity
 import android.app.PendingIntent
 import android.content.Intent
-import android.content.IntentSender
 import android.os.Bundle
 import android.os.Handler
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -52,7 +52,7 @@ class ProductCoinListAdapter(private val mMainActivity: Activity,
             var buyIntentBundle: Bundle? = billingService.getBuyIntent(3, mMainActivity.packageName, appCoin.productId.id, "inapp", "developerPayload")
 
             // 購入が可能であれば
-            if (OK.equals(buyIntentBundle?.getInt("RESPONSE_CODE"))) {
+            if (OK.equals(buyIntentBundle!!.getInt("RESPONSE_CODE"))) {
                 // 購入フローを開始
                 val pendingIntent = buyIntentBundle?.getParcelable<PendingIntent>("BUY_INTENT")
                 // 購入フローを完了する
@@ -60,7 +60,7 @@ class ProductCoinListAdapter(private val mMainActivity: Activity,
             }
 
             // FIXME: コイン購入の際にコインを付与して消費処理を行うので本来はここは通らないはず
-            if (ITEM_ALREADY_OWNED.equals(buyIntentBundle?.getInt("RESPONSE_CODE"))) {
+            if (ITEM_ALREADY_OWNED.equals(buyIntentBundle!!.getInt("RESPONSE_CODE"))) {
                 Toast.makeText(mMainActivity, "既に所有しているので購入できない", Toast.LENGTH_SHORT).show()
 
                 // Warinig: consumePurchase はメインスレッドから呼び出さない事。このメソッドはネットワークリクエストのトリガーになり、メインスレッドをブロックする
