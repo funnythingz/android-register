@@ -15,22 +15,32 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             >
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginRight="2dp"
-                android:textSize="24dp"
-                android:id="@+id/product_coin_value_text_view"
-                android:textColor="#334455"
-                tools:text="100"
-                />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="14dp"
-                android:textColor="#334455"
-                android:text="コイン"
-                />
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="2dp"
+                    android:textSize="18dp"
+                    android:id="@+id/product_name_text_view"
+                    android:textColor="#334455"
+                    tools:text="ProductName"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="2dp"
+                    android:textSize="16dp"
+                    android:id="@+id/product_id_text_view"
+                    android:textColor="#334455"
+                    tools:text="android.test.purchased"
+                    />
+            </LinearLayout>
         </LinearLayout>
         <LinearLayout
             android:layout_width="wrap_content"

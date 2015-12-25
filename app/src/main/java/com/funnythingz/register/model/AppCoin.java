@@ -4,23 +4,29 @@ package com.funnythingz.register.model;
  */
 public class AppCoin {
 
-    private int mCoin;
-    private Price mPrice;
+    private ProductId mProductId;
+    private String mProductName;
+    private String mPrice;
 
-    public AppCoin(int coin, int price) {
-        mCoin = coin;
-        mPrice = new Price(price, CurrencyUnit.YEN);
+    public AppCoin(ProductId productId, String productName, String price) {
+        mProductId = productId;
+        mProductName = productName;
+        mPrice = price;
     }
 
-    public String getValue() {
-        return Integer.toString(mCoin);
+    public ProductId getProductId() {
+        return mProductId;
     }
 
-    public int getCoin() {
-        return mCoin;
+    public String getProductName() {
+        return mProductName;
     }
 
-    public Price getPrice() {
+    public String getPrice() {
         return mPrice;
+    }
+
+    public boolean equals(AppCoin appCoin) {
+        return mProductId.getId() == appCoin.getProductId().getId();
     }
 }
